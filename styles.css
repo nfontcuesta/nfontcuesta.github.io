@@ -1,0 +1,474 @@
+:root {
+    --color-primary: white;
+    --color-secondary: #feab0b;
+    --color-tertiary: #e0253b;
+    --color-text: #362c18;
+}
+
+@font-face {
+    font-family: 'Handfine';
+    src: url('./font/handfine/Handfine.ttf') format('truetype'),
+         url('./font/handfine/Handfine.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./font/montserrat/Montserrat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./font/montserrat/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-primary);
+    overflow-x: hidden; /* Evita el desbordament horitzontal */
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: var(--color-primary);
+    color: var(--color-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    flex-wrap: wrap; /* Permet que els elements es moguin a la següent línia */
+    align-items: flex-start; /* Alinea els elements a la part superior quan es fa el wrap */
+}
+
+a:hover {
+    color: var(--color-secondary);
+}
+
+header.shrink {
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+#home {
+    width: 100%;
+    height: 100vh;
+    background: url('./img/inici.jpeg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.home-text {
+    color: var(--color-secondary);
+    font-size: clamp(1.5rem, 1.8rem, 4rem);
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.home-text h1 {
+    color: var(--color-primary);
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.home-text h2 {
+    color: var(--color-secondary);
+    margin: 10px;
+    font-family: 'Handfine', sans-serif;
+    font-size: 3.5rem;
+    text-transform: none;
+}
+
+
+.logo-img {
+    width: 60px;
+    height: 60px;
+}
+
+nav {
+    order: 3; /* Es col·loca després del botó de menú a la següent línia en mòbil */
+    width: 100%; /* Ocupa tota l'amplada en mòbil quan està actiu */
+    display: none; /* Ocult per defecte en mòbil */
+}
+
+nav.active {
+    display: block; /* Es mostra quan la classe 'active' està present */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Centra les opcions del menú en mòbil */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 101;
+    order: 2; /* Se situa al centre o a la dreta, depenent de l'espai */
+}
+
+/* Estils per a pantalles més grans */
+@media (min-width: 769px) {
+    header {
+        padding-left: 50px;
+        padding-right: 50px;
+        flex-wrap: nowrap; /* Evita el wrap en pantalles grans */
+        align-items: center; /* Centra verticalment els elements */
+    }
+
+    section {
+        padding: 50px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    nav {
+        display: block !important; /* Força la visualització en pantalles grans */
+        order: 2; /* Se situa entre el logo i el botó de menú (que estarà ocult) */
+        width: auto;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 20px;
+        text-align: left; /* Alinea el text a l'esquerra en pantalles grans */
+    }
+
+    nav ul li a {
+        padding: 10px 20px;
+    }
+
+    #menu-toggle {
+        display: none; /* Ocultar el botó en pantalles grans */
+    }
+}
+
+/* Estils per a pantalles més petites (mòbils) */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden; /* Evitar el desbordament horitzontal en mòbils */
+    }
+
+    header {
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: space-between; /* Assegura que el logo i el botó estiguin als extrems */
+    }
+
+    section {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box; /* Ajustar l'amplada de les seccions */
+    }
+
+    nav {
+        position: static; /* Important per al nou comportament */
+        box-shadow: none;
+    }
+
+    nav ul {
+        display: none; /* Ocult per defecte */
+    }
+
+    nav.active ul {
+        display: block; /* Es mostra quan el menú està actiu */
+    }
+
+    #menu-toggle {
+        display: block; /* Mostrar el botó en mòbils */
+    }
+}
+
+.section-title {
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.section-title.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.center-container {
+    opacity: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.center-container.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.center-title {
+    font-family: 'Handfine', sans-serif;
+    font-size: 6rem;
+    color: var(--color-primary);
+}
+
+.center-subtitle {
+    margin-top: 30px;
+    font-family: 'Handfine', sans-serif;
+    font-size: 3.5rem;
+    color: var(--color-text);
+}
+
+@media (max-width: 768px) {
+    .center-subtitle {
+        font-size: 2rem;
+    }
+}
+
+.contact-button {
+    border-radius: 0px;
+    border-color: var(--color-text);
+    border-style:solid;
+    background-color: var(--color-secondary);
+    padding: 10px 10px;
+    color: var(--color-text);
+    border-radius: 0px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: var(--color-text);
+    color: var(--color-primary);
+}
+
+
+/* PROPOSTES */
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(40px);  /* Lleuger moviment cap avall en lloc de lateral */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.cards-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.link {
+    color: var(--color-tertiary);
+}
+
+.card {
+    display: flex;
+    border: 2px solid var(--color-text);
+    background-color: var(--color-primary);
+    padding: 15px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+.card-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-tertiary);
+    margin-right: 10px;
+}
+.card:hover {
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+}
+.card:hover .card-number {
+    color: var(--color-primary);
+}
+@media (max-width: 600px) {
+    .cards-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+/*PERSON LSIT*/
+/*PERSON LSIT*/
+.people-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.people-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.person {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    border: 2px solid var(--color-text);
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);;
+    position: relative;  /* Perquè el botó es posicioni absolutament dins de la targeta */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    overflow: hidden;
+    height: auto;
+    gap: 10px; /* Afegim espai entre les seccions */
+}
+.person:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-tertiary);
+    color: var(--color-text);
+}
+
+.person-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+}
+.person-img {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+.person-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* Reduïm la distància entre el títol i la descripció */
+.person-content h3 {
+    margin-bottom: 10px;
+    margin-top: 0px;
+}
+
+.person-content p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/* Afegim un div per envoltar el botó */
+.person-footer {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 10px;
+    bottom: 0px;  /* Col·loca el div a la part inferior de la targeta */
+    left: 0px;    /* Alinea el div amb la part esquerra de la targeta */
+}
+
+/* El botó serà petit i estarà alineat a la dreta */
+.more-info-btn {
+    bottom: 0px;
+    width: 150px;
+    padding: 5px 10px;
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+    border: none;
+    border-radius: 0px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.more-info-btn:hover {
+    background-color: var(--color-primary);
+}
+
+@media (max-width: 600px) {
+    .people-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .person {
+        width: 100%;
+    }
+}
+
+.defensem-card {
+    border-left: 10px solid var(--color-text);
+    background-color: #fff7e6;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 80px;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.defensem-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.qui-som-card {
+    border-left: 10px solid var(--color-tertiary);
+    background-color: #f9d6db;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 80px;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.qui-som-card.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+

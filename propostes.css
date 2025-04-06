@@ -1,0 +1,47 @@
+
+.propostes-section {
+    padding-top: 100px;
+}
+
+.propostes-section-title {
+    color: var(--color-text);
+    font-size: 3.5rem;
+}
+
+.proposta {
+    border-left: 10px solid var(--color-secondary);
+    background-color: #fff7e6;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 80px;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.proposta.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.proposta h2 {
+    margin: 0 0 0.5rem;
+    color: var(--color-tertiary);
+}
+
+.proposta span.numero {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-secondary);
+    margin-right: 0.5rem;
+}
+
+.compromis {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: var(--color-text);
+}
+
+.mesura {
+    margin-top: 0.5rem;
+    color: var(--color-text);
+}
