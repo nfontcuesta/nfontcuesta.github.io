@@ -323,6 +323,14 @@ img {
 .card:hover .card-number {
     color: var(--color-primary);
 }
+
+.card:hover .link {
+    color: var(--color-secondary);
+}
+
+.card:hover .link:hover {
+    color: var(--color-primary);
+}
 @media (max-width: 600px) {
     .cards-container {
         display: flex;
