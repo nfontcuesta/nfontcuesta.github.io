@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /script.js
+Disallow: /styles.css
+Disallow: /propostes.css
+Disallow: /candidats.css
+
+Sitemap: https://dignitatrepublicanabcn.cat/sitemap.xml
