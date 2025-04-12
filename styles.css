@@ -32,7 +32,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     color: var(--color-text);
     background-color: var(--color-primary);
-    overflow-x: hidden; /* Evita el desbordament horitzontal */
+    overflow-x: hidden;
 }
 
 header {
@@ -48,8 +48,8 @@ header {
     transition: all 0.3s;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 100;
-    flex-wrap: wrap; /* Permet que els elements es moguin a la següent línia */
-    align-items: flex-start; /* Alinea els elements a la part superior quan es fa el wrap */
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 a:hover {
@@ -102,20 +102,20 @@ header.shrink {
 }
 
 nav {
-    order: 3; /* Es col·loca després del botó de menú a la següent línia en mòbil */
-    width: 100%; /* Ocupa tota l'amplada en mòbil quan està actiu */
-    display: none; /* Ocult per defecte en mòbil */
+    order: 3; 
+    width: 100%; 
+    display: none; 
 }
 
 nav.active {
-    display: block; /* Es mostra quan la classe 'active' està present */
+    display: block; 
 }
 
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: center; /* Centra les opcions del menú en mòbil */
+    text-align: center; 
 }
 
 nav ul li a {
@@ -131,16 +131,15 @@ nav ul li a {
     font-size: 2em;
     cursor: pointer;
     z-index: 101;
-    order: 2; /* Se situa al centre o a la dreta, depenent de l'espai */
+    order: 2;
 }
 
-/* Estils per a pantalles més grans */
 @media (min-width: 769px) {
     header {
         padding-left: 50px;
         padding-right: 50px;
-        flex-wrap: nowrap; /* Evita el wrap en pantalles grans */
-        align-items: center; /* Centra verticalment els elements */
+        flex-wrap: nowrap;
+        align-items: center;
     }
 
     section {
@@ -150,15 +149,15 @@ nav ul li a {
     }
 
     nav {
-        display: block !important; /* Força la visualització en pantalles grans */
-        order: 2; /* Se situa entre el logo i el botó de menú (que estarà ocult) */
+        display: block !important;
+        order: 2;
         width: auto;
     }
 
     nav ul {
         display: flex;
         gap: 20px;
-        text-align: left; /* Alinea el text a l'esquerra en pantalles grans */
+        text-align: left;
     }
 
     nav ul li a {
@@ -166,43 +165,42 @@ nav ul li a {
     }
 
     #menu-toggle {
-        display: none; /* Ocultar el botó en pantalles grans */
+        display: none;
     }
 }
 
-/* Estils per a pantalles més petites (mòbils) */
 @media (max-width: 768px) {
     body {
-        overflow-x: hidden; /* Evitar el desbordament horitzontal en mòbils */
+        overflow-x: hidden;
     }
 
     header {
         padding-left: 20px;
         padding-right: 20px;
-        justify-content: space-between; /* Assegura que el logo i el botó estiguin als extrems */
+        justify-content: space-between;
     }
 
     section {
         padding: 20px;
         width: 100%;
-        box-sizing: border-box; /* Ajustar l'amplada de les seccions */
+        box-sizing: border-box;
     }
 
     nav {
-        position: static; /* Important per al nou comportament */
+        position: static;
         box-shadow: none;
     }
 
     nav ul {
-        display: none; /* Ocult per defecte */
+        display: none;
     }
 
     nav.active ul {
-        display: block; /* Es mostra quan el menú està actiu */
+        display: block;
     }
 
     #menu-toggle {
-        display: block; /* Mostrar el botó en mòbils */
+        display: block;
     }
 }
 
@@ -251,9 +249,12 @@ img {
 
 .center-subtitle {
     margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
     font-family: 'Handfine', sans-serif;
     font-size: 3.5rem;
     color: var(--color-text);
+    max-width: 1140px;
 }
 
 @media (max-width: 768px) {
@@ -289,7 +290,7 @@ img {
     gap: 20px;
     margin-top: 20px;
     opacity: 0;
-    transform: translateY(40px);  /* Lleuger moviment cap avall en lloc de lateral */
+    transform: translateY(40px);
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
@@ -342,7 +343,6 @@ img {
 }
 
 /*PERSON LSIT*/
-/*PERSON LSIT*/
 .people-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -366,12 +366,12 @@ img {
     border: 2px solid var(--color-text);
     background-color: var(--color-tertiary);
     color: var(--color-primary);;
-    position: relative;  /* Perquè el botó es posicioni absolutament dins de la targeta */
+    position: relative;
     cursor: pointer;
     transition: background-color 0.3s ease;
     overflow: hidden;
     height: auto;
-    gap: 10px; /* Afegim espai entre les seccions */
+    gap: 10px;
 }
 .person:hover {
     background-color: var(--color-primary);
@@ -400,7 +400,6 @@ img {
     position: relative;
 }
 
-/* Reduïm la distància entre el títol i la descripció */
 .person-content h3 {
     margin-bottom: 10px;
     margin-top: 0px;
@@ -411,17 +410,15 @@ img {
     margin-bottom: 10px;
 }
 
-/* Afegim un div per envoltar el botó */
 .person-footer {
     display: flex;
     width: 100%;
     justify-content: flex-end;
     margin-top: 10px;
-    bottom: 0px;  /* Col·loca el div a la part inferior de la targeta */
-    left: 0px;    /* Alinea el div amb la part esquerra de la targeta */
+    bottom: 0px;
+    left: 0px;
 }
 
-/* El botó serà petit i estarà alineat a la dreta */
 .more-info-btn {
     bottom: 0px;
     width: 150px;
