@@ -3,5 +3,6 @@ Disallow: /script.js
 Disallow: /styles.css
 Disallow: /propostes.css
 Disallow: /candidats.css
+Disallow: /noticies/noticies.css
 
 Sitemap: https://dignitatrepublicanabcn.cat/sitemap.xml
