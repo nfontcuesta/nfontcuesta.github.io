@@ -8,6 +8,12 @@
     font-size: 3.5rem;
 }
 
+@media (max-width: 768px) {
+    .noticia-section-title {
+        font-size: 2.8rem;
+    }
+}
+
 .noticia-figure {
     text-align: center;
     margin: 2rem 0;
