@@ -6,6 +6,9 @@
 .noticia-section-title {
     color: var(--color-text);
     font-size: 3.5rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media (max-width: 768px) {
@@ -16,7 +19,10 @@
 
 .noticia-figure {
     text-align: center;
-    margin: 2rem 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
 }
 
 .noticia-figure img {
