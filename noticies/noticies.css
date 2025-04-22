@@ -26,6 +26,12 @@
     margin: 0 auto;
 }
 
+.noticia-section p {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .noticia-outstanding {
     border-left: 10px solid var(--color-text);
     color: var(--color-secondary);
