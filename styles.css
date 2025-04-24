@@ -273,6 +273,7 @@ img {
     border-radius: 0px;
     font-size: 1.5rem;
     cursor: pointer;
+    margin-bottom:50px;
     transition: background-color 0.3s ease;
 }
 
