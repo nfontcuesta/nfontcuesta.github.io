@@ -6,7 +6,7 @@
 
       <loc>https://dignitatrepublicanabcn.cat/</loc>
 
-      <lastmod>2025-04-22</lastmod>
+      <lastmod>2025-04-24</lastmod>
 
       <changefreq>daily</changefreq>
 
@@ -18,7 +18,7 @@
 
       <loc>https://dignitatrepublicanabcn.cat/index.html</loc>
 
-      <lastmod>2025-04-22</lastmod>
+      <lastmod>2025-04-24</lastmod>
 
       <changefreq>daily</changefreq>
 
@@ -55,6 +55,18 @@
       <loc>https://dignitatrepublicanabcn.cat/noticies/recuperem-la-veu.html</loc>
 
       <lastmod>2025-04-22</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>0.7</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://dignitatrepublicanabcn.cat/noticies/reactivar-per-reconstruir.html</loc>
+
+      <lastmod>2025-04-24</lastmod>
 
       <changefreq>monthly</changefreq>
 
