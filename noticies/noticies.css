@@ -1,6 +1,7 @@
 
 .noticia-section {
     padding-top: 100px;
+    padding-bottom: 50px;
 }
 
 .noticia-section-title {
@@ -38,6 +39,13 @@
     margin-right: auto;
 }
 
+.noticia-section hr {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #666;
+}
+
 .noticia-outstanding {
     border-left: 10px solid var(--color-text);
     color: var(--color-secondary);
@@ -64,7 +72,6 @@
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 50px;
 }
 
 .author {
